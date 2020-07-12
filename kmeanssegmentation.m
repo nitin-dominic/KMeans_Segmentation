@@ -6,14 +6,14 @@
 % Taught by Dr. Ravi K. Yellavajjala
 % Department of Civil and Environmental Engineering
 %% Load Image
-I = im2double(imread('purepng.com-mariomariofictional-charactervideo-gamefranchisenintendodesigner-1701528634653vywuz.png'));       
+I = im2double(imread('Barley_Trials.tif'));       
 J = imresize(I, 0.2);
 imshow(J);
 title('Original Image');
 % Load Image
 %%
 F = reshape(J,size(J,1)*size(J,2),3);                 % Color Features
-%% K-means
+%% K-means (number of clusters to segment the image)
 K     = 2;                                            % Cluster Numbers
 CENTS = F( ceil(rand(K,1)*size(F,1)) ,:);             % Cluster Centers
 DAL   = zeros(size(F,1),K+2);                         % Distances and Labels
